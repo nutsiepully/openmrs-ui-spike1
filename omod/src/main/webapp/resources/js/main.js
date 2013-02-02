@@ -71,11 +71,8 @@ define([
     'collections/apps'
 ], function( Backbone, appCollection ) {
 
-//    appCollection.reset({});
     appCollection.each(function(model) { model.destroy(); } )
     appList.apps.forEach( function( app ) {
         appCollection.create( {id: app.id, label: app.label, homepageUrl: app.homepageUrl} );
     });
-
-    Backbone.history.start();
 });

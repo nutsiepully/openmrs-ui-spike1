@@ -8,24 +8,15 @@ require([
     require([
         'backbone',
         'views/app_list',
-        'routers/router'
-    ], function( Backbone, AppListView, Router ) {
+        'routers/app_router'
+    ], function( Backbone, AppListView, AppRouter ) {
 
         console.log( Backbone );
 
-        router = new Router();
-        router.navigate( 'apps', {trigger: true} );
+        var router = new AppRouter();
+//        router.navigate( 'apps', {trigger: true} );
+
+        Backbone.history.start();
     });
 
 });
-
-//require([
-//    'main',
-//    'backbone',
-//    'views/app_list',
-//    'routers/router'
-//], function( main, Backbone, AppListView, Router ) {
-//
-//    router = new Router();
-//    router.navigate('');
-//});

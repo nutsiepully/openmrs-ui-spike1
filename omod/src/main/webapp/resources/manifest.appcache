@@ -27,7 +27,8 @@ js/collections/patients.js
 
 js/models/patient.js
 
-js/routers/router.js
+js/routers/app_router.js
+js/routers/patient_router.js
 
 js/templates/app_list.html
 js/templates/app_list_item.html

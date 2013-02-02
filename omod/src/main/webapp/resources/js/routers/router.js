@@ -7,21 +7,25 @@ define([
        'models/patient',
        'views/patient_list',
        'views/patient_modify',
-       'views/patient_show'
-], function( $, _, Backbone, patientCollection, Patient, PatientListView, PatientModifyView, PatientShowView ) {
+       'views/patient_show',
+       'collections/apps',
+       'views/app_list'
+], function( $, _, Backbone, patientCollection, Patient, PatientListView,
+             PatientModifyView, PatientShowView, appCollection, AppListView ) {
 
     var AppRouter = Backbone.Router.extend({
 
         routes: {
             "": "home",
+            "apps": "home",
             "patients/new": "patientNew",
             "patients/edit/:id": "patientEdit",
             "patients/show/:id": "patientShow",
-            "patients/list": "patientsList",
-            "apps/list": "appList"
+            "patients/list": "patientsList"
         },
 
         home: function() {
+            new AppListView( {collection: appCollection} );
         },
 
         patientNew: function() {

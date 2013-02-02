@@ -3,7 +3,8 @@ define([
     'jquery',
     'underscore',
     'backbone',
-    'views/app_list_item'
+    'views/app_list_item',
+    'text!templates/app_list.html'
 ], function( $, _, Backbone, AppListItemView, AppListTemplate) {
 
     var AppListView = Backbone.View.extend({

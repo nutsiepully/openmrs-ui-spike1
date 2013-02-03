@@ -52,14 +52,17 @@ appList.apps.forEach( function( app ) {
         return url.substr(0, url.lastIndexOf('/'));
     }
 
-    paths_config[app['id']] = excludeLastPart(hostname + app['homepageUrl']);
-    shim_config[app['id']] = hostname + app['homepageUrl'];
+    paths_config[app['id']] = excludeLastPart(hostname + app['homepageUrl']) + '/js/';
+//    shim_config[app['id']] = hostname + app['homepageUrl'];
 });
 
 console.log(paths_config);
 console.log(shim_config);
 
 require.config({
+
+    // This is a hack here, this path should be made relative.
+    baseUrl: 'http://localhost:8080/openmrs/moduleResources/spike1/js/',
 
     shim: shim_config,
 

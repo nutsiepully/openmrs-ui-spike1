@@ -2,6 +2,7 @@
 require([
     'main'
 ], function( main ) {
+
     // Ensure main.js is loaded which sets up the configuration.
 
     require([

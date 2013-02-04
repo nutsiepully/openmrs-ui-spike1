@@ -14,7 +14,7 @@ define([
         template: _.template( PatientListTemplate ),
 
         initialize: function() {
-            this.listenTo( this.collection, 'all', this.render );
+//            this.listenTo( this.collection, 'all', this.render );
             this.render();
         },
 

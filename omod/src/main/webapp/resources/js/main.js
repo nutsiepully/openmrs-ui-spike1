@@ -75,6 +75,14 @@ define([
     'collections/apps'
 ], function( Backbone, appCollection ) {
 
+//    Backbone.View.prototype.close = function(){
+////        this.remove();
+//        this.unbind();
+//        if (this.onClose){
+//            this.onClose();
+//        }
+//    }
+//
     appCollection.each(function(model) { model.destroy(); } )
     appList.apps.forEach( function( app ) {
         appCollection.create( {id: app.id, label: app.label, homepageUrl: app.homepageUrl} );

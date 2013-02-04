@@ -5,7 +5,7 @@ define([
     'backbone',
     'text!templates/patient_modify.html',
     'collections/patients',
-    'routers/router'
+    'routers/patient_router'
 ], function( $, _, Backbone, PatientModifyTemplate, patientCollection, Router ) {
 
     var PatientModifyView = Backbone.View.extend({
@@ -24,7 +24,7 @@ define([
         },
 
         render: function() {
-            this.$el.html( this.template( this.model.toJSON() ) );
+            this.$el.html( this.template( { data: this.model.toJSON() } ) );
             return this;
         },
 
@@ -56,7 +56,12 @@ define([
             }
             this.clearInput();
 
-            (new Router()).navigate( '#patients/show/' + this.model.attributes.id );
+            this.$el.html('');
+            this.unbind();
+            this.undelegateEvents();
+
+            Backbone.history.navigate( '#patients/show/' + this.model.attributes.id, { trigger: true } );
+//            (new Router()).navigate( '#patients/show/' + this.model.attributes.id, { trigger: true } );
         }
 
     });

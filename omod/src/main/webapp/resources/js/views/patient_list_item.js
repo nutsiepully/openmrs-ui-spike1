@@ -13,7 +13,7 @@ define([
         template: _.template( PatientListItemTemplate ),
 
         initialize: function() {
-            this.listenTo( this.model, 'all', this.render );
+//            this.listenTo( this.model, 'all', this.render );
             this.render();
         },
 

@@ -1,10 +1,10 @@
 <a href="#patients/list">List all Patients</a>
 <form>
     <label>First Name</label>
-    <input name="firstName" type="text" value="<%- firstName %>">
+    <input name="firstName" type="text" value="<%- data.firstName %>">
 
     <label>Last Name</label>
-    <input name="lastName" type="text" value="<%- lastName %>">
+    <input name="lastName" type="text" value="<%- data.lastName %>">
 
     <div class="btn-group" name="gender" data-toggle="buttons-radio">
         <button type="button" class="btn btn-primary">Male</button>
@@ -12,13 +12,13 @@
     </div>
 
     <label>Birth Date</label>
-    <input type="date" name="birthDate" value="<%- birthDate %>">
+    <input type="date" name="birthDate" value="<%- data.birthDate %>">
 
     <label>Address</label>
-    <input type="text" name="address" value="<%- address %>">
+    <input type="text" name="address" value="<%- data.address %>">
 
     <label>Telephone Number</label>
-    <input type="number" name="number" value="<%- number %>">
+    <input type="number" name="number" value="<%- data.number %>">
 
     <input type="button" id="patient-create" value="Save!">
 </form>

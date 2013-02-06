@@ -40,7 +40,7 @@
     <bean id="patientRegistrationApp" class="org.openmrs.module.appframework.SimpleAppDescriptor">
         <property name="id" value="patientRegistrationApp"/>
         <property name="label" value="Patient Registration"/>
-        <property name="homepageUrl" value="openmrs/moduleResources/spike1/patientRegistration.html"/>
+        <property name="homepageUrl" value="moduleResources/spike1/patientRegistration.html"/>
         <property name="iconUrl" value="icon-cogs"/>
         <!--<property name="order" value="2" />-->
     </bean>

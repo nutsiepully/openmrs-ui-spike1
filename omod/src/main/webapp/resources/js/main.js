@@ -32,9 +32,10 @@ var shim_config = {
 
 // load apps
 // current URL - http://localhost:8080/openmrs/moduleResources/spike1/js/
-var moduleResourcesDirectory = '../../'
-var hostname = '../../../../'
-var appListUrl = hostname + 'openmrs/module/spike1/appList.json'
+var moduleResourcesDirectory = '../../';
+var hostname = '../../../../';
+var servletUrl = '../../../';
+var appListUrl = hostname + 'openmrs/module/spike1/appList.json';
 var appList;
 
 var appListJson = $.ajax({
@@ -53,7 +54,7 @@ appList.apps.forEach( function( app ) {
     }
 
     // TODO: Maybe a more elegant way than plugging in the extra js part
-    paths_config[app['id']] = excludeLastPart(hostname + app['homepageUrl']) + '/js/';
+    paths_config[app['id']] = excludeLastPart(servletUrl + app['homepageUrl']) + '/js/';
 //    shim_config[app['id']] = hostname + app['homepageUrl'];
 });
 

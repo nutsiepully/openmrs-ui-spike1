@@ -13,7 +13,7 @@ define([
         },
 
         appLink: function() {
-            return document.location.origin + '/' + this.attributes.homepageUrl;
+            return document.location.origin + document.location.pathname.match(/^(\/.*?\/).*$/)[1] + this.attributes.homepageUrl;
         },
 
         toJSON: function() {
